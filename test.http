@@ -1,0 +1,15 @@
+GET http://localhost:8080/api/v1/flowers
+#GET https://fierce-tor-50685.herokuapp.com/api/v1/flowers
+
+
+###
+#POST https://fierce-tor-50685.herokuapp.com/api/v1/flowers
+POST http://localhost:8080/api/v1/flowers
+Content-Type: application/json
+
+{
+  "sepalLength": 100.0,
+  "color": 0,
+  "flowerType": 0,
+  "price": 10.0
+}

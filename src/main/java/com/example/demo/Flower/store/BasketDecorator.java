@@ -1,6 +1,6 @@
 package com.example.demo.Flower.store;
 
-public class BasketDecorator {
+public class BasketDecorator extends AbstractDecorator{
     @Override
     public String toString() {
         return super.toString();

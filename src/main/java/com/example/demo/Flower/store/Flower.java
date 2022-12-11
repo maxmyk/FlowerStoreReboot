@@ -1,24 +1,30 @@
 package com.example.demo.Flower.store;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import java.util.Random;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
 public class Flower {
+    @Id @GeneratedValue
+    private int id;
     private static final int MAX_PRICE = 100;
     private static final int MAX_SEP_LEN = 50;
     private double price;
     private double sepalLength;
     private FlowerColor color;
     private FlowerType flowerType;
-
-    public Flower() {
-    }
 
     public Flower(FlowerType type) {
         double pricea = new Random().nextDouble() * MAX_PRICE;

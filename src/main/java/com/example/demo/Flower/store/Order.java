@@ -2,13 +2,18 @@ package com.example.demo.Flower.store;
 
 import com.example.demo.Delivery.Delivery;
 import com.example.demo.Payment.Payment;
+import com.example.demo.UserServices.UserService;
+import com.example.demo.users.AppUser;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Order {
     LinkedList<Item> items = new LinkedList<>();
     Payment payment;
     Delivery delivery;
+
+    UserService userService;
     public void setPaymentStrategy(Payment payment){
         this.payment = payment;
     }
@@ -44,5 +49,22 @@ public class Order {
     }
     public void removeItem(Item item){
         this.items.remove(item);
+    }
+
+    public void addUser(AppUser user){
+        userService.addUser(user);
+    }
+    public void removeUser(AppUser user){
+
+    }
+
+    public void notifyUsers(List<AppUser> users){
+        for (AppUser user:users) {
+            user.notify();
+        }
+    }
+
+    public void order(){
+        notifyUsers(userService.getUsers());
     }
 }

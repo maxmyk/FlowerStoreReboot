@@ -1,4 +1,4 @@
 package com.example.demo.Flower.store;
 
-public class ItemDecorator {
+public class ItemDecorator extends AbstractDecorator{
 }
